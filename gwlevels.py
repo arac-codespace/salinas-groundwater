@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import math
 import numpy as np
 import matplotlib.dates as mdates
+import glob
 
 print("Running gwlevels script...")
 
@@ -13,15 +14,19 @@ class GWLevels():
     def __init__(self):
         self.field_data = self.get_gw_data()
 
+    # https://stackoverflow.com/questions/20906474/import-multiple-csv-files-into-pandas-and-concatenate-into-one-dataframe
     def get_gw_data(self):
         CURR_DIR = os.path.dirname(os.path.realpath(__file__))
         DATA_PATH = os.path.join(
             CURR_DIR, "salinas-gwlevels/usgs_field_measurements/")
+        all_tsv_files = glob.glob(DATA_PATH + "/*.tsv")
+        li = []
+        for filename in all_tsv_files:
+            print(filename)
+            df = pd.read_csv(filename, index_col=None, sep='\t', header=110)
+            li.append(df)
 
-        df = pd.read_csv(
-                os.path.join(
-                    DATA_PATH, "gwlevels-3-21.tsv"), sep='\t', header=110
-            )
+        df = pd.concat(li, axis=0, ignore_index=True)
 
         df.lev_dt = pd.to_datetime(df["lev_dt"])
         df['month'] = df["lev_dt"].dt.strftime('%b')
@@ -34,11 +39,10 @@ class GWLevels():
         return df.query('lev_age_cd=="A"')
 
 
-def frequency(df, height=5, aspect=1, col_wrap=None, palette=None, style=None, filtered=True):
+def frequency(df, height=1.5, aspect=2, col_wrap=5, palette=None, style="darkgrid", filtered=True):
     # gw.frequency(df, height=1.5, aspect=2, col_wrap=5, style="darkgrid")
     # Extract pertinent columns, groupby month and reset index...
     df2 = df[["site_no", "lev_va", "lev_dt"]]
-    site_no_list = df.site_no.unique().tolist()
     # Group so each month-year will have the first record only representing
     # that a measurement was observed in that period
     df2 = df2.groupby(
@@ -73,7 +77,6 @@ def frequency(df, height=5, aspect=1, col_wrap=None, palette=None, style=None, f
               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
     # Recommended... (df, height=1.5, col_wrap=7, style="darkgrid")
-    sns.set(style=style, font_scale=0.85)
 
     # Filtering out sites by site_no...
     filter_sites = [
@@ -86,40 +89,48 @@ def frequency(df, height=5, aspect=1, col_wrap=None, palette=None, style=None, f
     if filtered:
         df2 = df2[~df2["site_no"].isin(filter_sites)]
 
+    # This is here to take filtering into account
+    site_no_list = df2.site_no.unique().tolist()
+
     print(df2)
-    g = sns.catplot(
-        x="lev_dt", y="lev_va", col="site_no",
-        data=df2, kind="bar", col_wrap=col_wrap,
-        height=height, aspect=aspect, order=months,
-        saturation=.5, ci=None, palette=palette
-    )
-    # https://stackoverflow.com/questions/43669229/increase-space-between-rows-on-facetgrid-plot
-    g.set_axis_labels("Month", "Count").set_titles(
-        "site_no: {col_name}").set_xticklabels(rotation=75)
+    loop = math.ceil(len(site_no_list)/(col_wrap*2))
+    sns.set(style=style, font_scale=0.85)
+    for i in range(loop):
+            sliced_list = site_no_list[:col_wrap*2]
+            g = sns.catplot(
+                x="lev_dt", y="lev_va", col="site_no",
+                data=df2[df2["site_no"].isin(sliced_list)], kind="bar", col_wrap=col_wrap,
+                height=height, aspect=aspect, order=months,
+                saturation=.5, ci=None, palette=palette
+            )
+            # https://stackoverflow.com/questions/43669229/increase-space-between-rows-on-facetgrid-plot
+            g.set_axis_labels("Month", "Count").set_titles(
+                "site_no: {col_name}").set_xticklabels(rotation=75)
 
-    g.fig.suptitle(
-        "Water-level: months measured throughout the years",
-        size=16
-    )
+            g.fig.suptitle(
+                "Water-level: months measured throughout the years",
+                size=16
+            )
 
-    index = 0
-    for ax in g.axes.flatten():
-        for _, spine in ax.spines.items():
-            spine.set_visible(False)
-            # spine.set_color('black')
-            spine.set_linewidth(0)
+            index = 0
+            for ax in g.axes.flatten():
+                for _, spine in ax.spines.items():
+                    spine.set_visible(False)
+                    # spine.set_color('black')
+                    spine.set_linewidth(0)
 
-        min_year = df[df["site_no"] == site_no_list[index]].lev_dt.dt.year.min()
+                min_year = df[df["site_no"] == sliced_list[index]].lev_dt.dt.year.min()
 
-        max_year = df[df["site_no"] == site_no_list[index]].lev_dt.dt.year.max()
+                max_year = df[df["site_no"] == sliced_list[index]].lev_dt.dt.year.max()
 
-        year_range = f'{min_year} - {max_year}'
-        # https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.annotate.html
-        ax.annotate(year_range, xy=(0, 0.94), xytext=(0, 0.94),
-                    xycoords='axes fraction', style="italic")
-        index += 1
+                year_range = f'{min_year} - {max_year}'
+                # https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.annotate.html
+                ax.annotate(year_range, xy=(0, 0.94), xytext=(0, 0.94),
+                            xycoords='axes fraction', style="italic")
+                index += 1
 
-    plt.subplots_adjust(hspace=0.2, wspace=0.1)
+            plt.subplots_adjust(hspace=0.2, wspace=0.1)
+            del site_no_list[:col_wrap*2]
     plt.show()
 
 
@@ -136,7 +147,7 @@ def year_avg_timeseries(df, height=1.5, aspect=1, col_wrap=None):
 
 
 # gw.month_year_timeseries(df, height=1.5, aspect=2, col_wrap=5, style="whitegrid")
-def month_year_timeseries(df, height=1.5, aspect=1, col_wrap=None, style=None, filtered=True):
+def month_year_timeseries(df, height=1.5, aspect=1, col_wrap=None, style=None, filtered=True, dfprint=False):
     df2 = df.copy()
     df2.index = pd.to_datetime(df["lev_dt"])
     df2 = df2.groupby(["site_no"]).resample("M").lev_va.mean()
@@ -152,6 +163,11 @@ def month_year_timeseries(df, height=1.5, aspect=1, col_wrap=None, style=None, f
     # ~ indicates is not in.  Check pandas doc
     if filtered:
         df2 = df2[~df2["site_no"].isin(filter_sites)]
+    if dfprint:
+        CURR_DIR = os.path.dirname(os.path.realpath(__file__))
+
+        df2.to_csv(os.path.join(
+                    CURR_DIR, "gwlevels_by_month.csv"), index=False)
 
     sns.set(style=style, font_scale=0.85)
     g = sns.FacetGrid(df2, col="site_no", col_wrap=col_wrap, height=height, aspect=aspect, sharex=True, sharey=False)
