@@ -1,0 +1,150 @@
+# ---------------------------------- WARNING ----------------------------------------
+# Some of the data that you have obtained from this U.S. Geological Survey database
+# may not have received Director's approval. Any such data values are qualified
+# as provisional and are subject to revision. Provisional data are released on the
+# condition that neither the USGS nor the United States Government may be held liable
+# for any damages resulting from its use.
+#
+# Additional info: https://help.waterdata.usgs.gov/policies/provisional-data-statement
+#
+# File-format description:  https://help.waterdata.usgs.gov/faq/about-tab-delimited-output
+# Automated-retrieval info: https://help.waterdata.usgs.gov/faq/automated-retrievals
+#
+# Contact:   gs-w_support_nwisweb@usgs.gov
+# retrieved: 2019-04-11 21:31:18 EDT       (nadww01)
+#
+# US Geological Survey groundwater levels
+#
+# Data for the following 44 site(s) are contained in this file
+#    USGS 175708066163000 PIEZOMETER ERMITANO CENTRAL, SALINAS, PR 
+#    USGS 175709066163200 PIEZOMETER USGS J-18, SALINAS, PR 
+#    USGS 175735066151800 PIEZOMETER C RASA, SALINAS, PR 
+#    USGS 175748066160400 SAL 1 WELL, SALINAS, PR 
+#    USGS 175804066150700 AGUIRRE 3 WELL, SALINAS, PR 
+#    USGS 175811066150500 AGUIRRE 1B WELL, SALINAS, PR 
+#    USGS 175815066153700 PIO 1 WELL, SALINAS, PR 
+#    USGS 175820066144800 EL ABEY DOMESTIC WELL, SALINAS, PR 
+#    USGS 175821066182100 ANT 1 WELL, SALINAS, PR 
+#    USGS 175823066162400 DINC WELL, SALINAS, PR 
+#    USGS 175823066164600 MAG 3 WELL, SALINAS, PR 
+#    USGS 175824066142300 PRWRA 1 WELL, SALINAS, PR 
+#    USGS 175825066152500 VEGA WELL, SALINAS, PR 
+#    USGS 175827066141000 AGUIRRE WELL, SALINAS, PR 
+#    USGS 175833066145800 PIEZOMETER A RASA, SALINAS, PR 
+#    USGS 175837066165400 CAR WELL, SALINAS, PR 
+#    USGS 175845066164500 CCR WELL, SALINAS, PR 
+#    USGS 175848066142600 WELL, SALINAS, PR 
+#    USGS 175848066170700 PIEZOMETER RASA G SALINAS, PR 
+#    USGS 175851066145700 ADE 1 WELL, SALINAS, PR 
+#    USGS 175851066153000 FORTUNA 4 BTR WELL, SALINAS, PR 
+#    USGS 175851066155100 FORTUNA 10 WELL, SALINAS, PR 
+#    USGS 175854066143100 HACIENDA SABATER 1 WELL, SALINAS, PR 
+#    USGS 175854066144500 LUCE 21 WELL, SALINAS, PR 
+#    USGS 175855066161400 MAG 2 WELL, SALINAS, PR 
+#    USGS 175857066123100 TUMORES A WELL, SALINAS, PR 
+#    USGS 175858066151600 FORTUNA 3 WELL, SALINAS, PR 
+#    USGS 175908066180500 ISA 2 WELL, SALINAS, PR 
+#    USGS 175909066185200 ISA 3 WELL, SALINAS, PR 
+#    USGS 175910066122300 AMOR WELL, SALINAS, PR 
+#    USGS 175910066155500 PIEZOMETER RASA D, SALINAS, PR 
+#    USGS 175912066162500 GODREAU-SOLAR 2 WELL, SALINAS, PR 
+#    USGS 175917066162000 GODREAU 4 WELL, SALINAS, PR 
+#    USGS 175921066144500 LAN 2 WELL, SALINAS, PR 
+#    USGS 175923066142300 PRWRA 5 WELL, SALINAS, PR 
+#    USGS 175928066141900 PRWRA 2 WELL, SALINAS, PR 
+#    USGS 175931066160100 GODREAU 5 WELL, SALINAS, PR 
+#    USGS 175933066161800 AMA 2 WELL, SALINAS, PR 
+#    USGS 175944066142100 PRWRA 3 WELL, SALINAS, PR 
+#    USGS 175947066130601 PIEZOMETER AGUIRRE HW 5B, SALINAS, PR 
+#    USGS 175957066123400 PIEZOMETER AGUIRRE HW 13, SALINAS, PR 
+#    USGS 180002066132200 PIEZOMETER AGUIRRE HW 1, SALINAS, PR 
+#    USGS 180104066152300 PIEZOMETER RM 10, SALINAS, PR 
+#    USGS 180206066135500 PIEZOMETER RM 5, SALINAS, PR 
+# -----------------------------------------------------------------------------------
+#
+# The fields in this file include:
+# ---------------------------------
+# agency_cd     Agency code
+# site_no       USGS site number
+# site_tp_cd    Site type code
+# lev_dt        Date level measured
+# lev_tm        Time level measured
+# lev_tz_cd     Time datum
+# lev_va        Water-level value in feet below land surface
+# sl_lev_va     Water-level value in feet above specific vertical datum
+# sl_datum_cd   Referenced vertical datum
+# lev_status_cd Status
+# lev_agency_cd Measuring agency
+# lev_dt_acy_cd Water-level date-time accuracy
+# lev_acy_cd    Water-level accuracy
+# lev_src_cd    Source of measurement
+# lev_meth_cd   Method of measurement
+# lev_age_cd    Water-level approval status
+#
+# Referenced agency codes (lev_agency_cd) included in this output:
+#
+#     USGS       U.S. Geological Survey
+#
+# Referenced site type codes (site_tp_cd) included in this output:
+#
+#     GW         Well
+#     GW-TH      Test hole
+#
+# Referenced water-level site status codes (lev_status_cd) included in this output:
+#
+#     ""         The reported water-level measurement represents a static level
+#
+# Referenced water-level date-time accuracy codes (lev_dt_acy_cd) included in this output:
+#
+#     D          Date is accurate to the Day
+#     m          Date is accurate to the Minute
+#
+# Referenced water-level accuracy codes (lev_acy_cd) included in this output:
+#
+#     1          Water level accuracy to nearest tenth of a foot
+#     2          Water level accuracy to nearest hundredth of a foot
+#
+# Referenced source of measurement codes (lev_src_cd) included in this output:
+#
+#     S          Measured by personnel of reporting agency.
+#
+# Referenced method of measurement codes (lev_meth_cd) included in this output:
+#
+#     S          Steel-tape measurement.
+#
+# Referenced water-level approval-status codes (lev_age_cd) included in this output:
+#
+#     A          Approved for publication -- Processing and review completed.
+#
+agency_cd	site_no	site_tp_cd	lev_dt	lev_tm	lev_tz_cd	lev_va	sl_lev_va	sl_datum_cd	lev_status_cd	lev_agency_cd	lev_dt_acy_cd	lev_acy_cd	lev_src_cd	lev_meth_cd	lev_age_cd
+USGS	175708066163000	GW	2002-07-09	14:30	AST	0.94				USGS	m	2	S	S	A
+USGS	175735066151800	GW-TH	2002-07-11			13.15				USGS	D	2	S	S	A
+USGS	175748066160400	GW	2002-07-09	16:10	AST	27.57				USGS	m	2	S	S	A
+USGS	175804066150700	GW	2002-07-10			50.10				USGS	D	2	S	S	A
+USGS	175811066150500	GW	2002-07-10			48.76				USGS	D	2	S	S	A
+USGS	175815066153700	GW	2002-07-10	09:45	AST	41.61				USGS	m	2	S	S	A
+USGS	175820066144800	GW	2002-07-09			29.14				USGS	D	2	S	S	A
+USGS	175821066182100	GW	2002-07-09			5.37				USGS	D	2	S	S	A
+USGS	175823066162400	GW	2002-07-09	15:20	AST	38.21				USGS	m	2	S	S	A
+USGS	175823066164600	GW	2002-07-10	14:10	AST	23.35				USGS	m	2	S	S	A
+USGS	175824066142300	GW	2002-07-09			23.02				USGS	D	2	S	S	A
+USGS	175827066141000	GW	2002-07-09			33.32				USGS	D	2	S	S	A
+USGS	175837066165400	GW	2002-07-09			40.32				USGS	D	2	S	S	A
+USGS	175845066164500	GW	2002-07-09	15:00	AST	37.90				USGS	m	2	S	S	A
+USGS	175848066142600	GW	2002-07-09			39.14				USGS	D	2	S	S	A
+USGS	175851066145700	GW	2002-07-11			51.3				USGS	D	1	S	S	A
+USGS	175851066153000	GW	2002-07-10	10:00	AST	38.8				USGS	m	1	S	S	A
+USGS	175854066143100	GW	2002-07-10			42.16				USGS	D	2	S	S	A
+USGS	175854066144500	GW	2002-07-10	11:07	AST	51.52				USGS	m	2	S	S	A
+USGS	175857066123100	GW	2002-07-09			4.68				USGS	D	2	S	S	A
+USGS	175858066151600	GW	2002-07-11			50.16				USGS	D	2	S	S	A
+USGS	175908066180500	GW	2002-07-11	10:10	AST	30.12				USGS	m	2	S	S	A
+USGS	175909066185200	GW	2002-07-11	14:10	AST	13.70				USGS	m	2	S	S	A
+USGS	175910066122300	GW	2002-07-09			6.66				USGS	D	2	S	S	A
+USGS	175910066155500	GW-TH	2002-07-10	15:50	AST	45.12				USGS	m	2	S	S	A
+USGS	175912066162500	GW	2002-07-09			40.40				USGS	D	2	S	S	A
+USGS	175917066162000	GW	2002-07-10	15:30	AST	52.01				USGS	m	2	S	S	A
+USGS	175921066144500	GW	2002-07-10	12:15	AST	64.45				USGS	m	2	S	S	A
+USGS	175928066141900	GW	2002-07-10	10:41	AST	42.67				USGS	m	2	S	S	A
+USGS	175931066160100	GW	2002-07-10	15:45	AST	54.92				USGS	m	2	S	S	A
+USGS	175944066142100	GW	2002-07-10	10:50	AST	35.46				USGS	m	2	S	S	A

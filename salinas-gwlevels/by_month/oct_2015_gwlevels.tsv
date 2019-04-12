@@ -1,0 +1,178 @@
+# ---------------------------------- WARNING ----------------------------------------
+# Some of the data that you have obtained from this U.S. Geological Survey database
+# may not have received Director's approval. Any such data values are qualified
+# as provisional and are subject to revision. Provisional data are released on the
+# condition that neither the USGS nor the United States Government may be held liable
+# for any damages resulting from its use.
+#
+# Additional info: https://help.waterdata.usgs.gov/policies/provisional-data-statement
+#
+# File-format description:  https://help.waterdata.usgs.gov/faq/about-tab-delimited-output
+# Automated-retrieval info: https://help.waterdata.usgs.gov/faq/automated-retrievals
+#
+# Contact:   gs-w_support_nwisweb@usgs.gov
+# retrieved: 2019-04-04 00:23:55 EDT       (nadww01)
+#
+# US Geological Survey groundwater levels
+#
+# Data for the following 47 site(s) are contained in this file
+#    USGS 175708066163000 PIEZOMETER ERMITANO CENTRAL, SALINAS, PR 
+#    USGS 175708066163001 PIEZOMETER ERMITANO NORTH SALINAS, PR 
+#    USGS 175709066163200 PIEZOMETER USGS J-18, SALINAS, PR 
+#    USGS 175711066143600 PIEZOMETER JBNERR EAST 1 SALINAS, PR 
+#    USGS 175711066143601 PIEZOMETER JBNERR EAST 2 SALINAS, PR 
+#    USGS 175721066151400 PIEZOMETER JBNERR WEST 1 SALINAS, PR 
+#    USGS 175721066151401 PIEZOMETER JBNERR WEST 2 SALINAS, PR 
+#    USGS 175747066151500 DOM ESPERANZA WELL, SALINAS, PR 
+#    USGS 175748066160400 SAL 1 WELL, SALINAS, PR 
+#    USGS 175804066150700 AGUIRRE 3 WELL, SALINAS, PR 
+#    USGS 175811066150500 AGUIRRE 1B WELL, SALINAS, PR 
+#    USGS 175812066134900 AGUIRRE 6 WELL, SALINAS, PR 
+#    USGS 175814066155900 ADT MON WELL, SALINAS, PR 
+#    USGS 175815066153700 PIO 1 WELL, SALINAS, PR 
+#    USGS 175815066153701 PIONEER FIRE PUMP WELL, SALINAS, PR 
+#    USGS 175820066144800 EL ABEY DOMESTIC WELL, SALINAS, PR 
+#    USGS 175822066141900 AVI 1 WELL, SALINAS, PR 
+#    USGS 175823066162400 DINC WELL, SALINAS, PR 
+#    USGS 175823066164600 MAG 3 WELL, SALINAS, PR 
+#    USGS 175824066142300 PRWRA 1 WELL, SALINAS, PR 
+#    USGS 175825066152500 VEGA WELL, SALINAS, PR 
+#    USGS 175827066141000 AGUIRRE WELL, SALINAS, PR 
+#    USGS 175827066151600 CSOL 2 WELL, SALINAS, PR 
+#    USGS 175827066151601 CSOL 3 WELL, SALINAS, PR 
+#    USGS 175828066151000 CSOL 4 WELL, SALINAS, PR 
+#    USGS 175830066152500 CSOL 1 WELL, SALINAS, PR 
+#    USGS 175833066145800 PIEZOMETER A RASA, SALINAS, PR 
+#    USGS 175842066144600 PLATANOS WELL, SALINAS, PR 
+#    USGS 175845066164500 CCR WELL, SALINAS, PR 
+#    USGS 175848066170700 PIEZOMETER RASA G SALINAS, PR 
+#    USGS 175850066154000 ROS 1 BTR WELL, SALINAS, PR 
+#    USGS 175851066155100 FORTUNA 10 WELL, SALINAS, PR 
+#    USGS 175854066144500 LUCE 21 WELL, SALINAS, PR 
+#    USGS 175854066144501 CRIDS 3 WELL, SALINAS, PR 
+#    USGS 175855066161400 MAG 2 WELL, SALINAS, PR 
+#    USGS 175856066144200 CRIDS 1, SALINAS, PR 
+#    USGS 175908066180500 ISA 2 WELL, SALINAS, PR 
+#    USGS 175910066155500 PIEZOMETER RASA D, SALINAS, PR 
+#    USGS 175910066155501 GODREAU FR WELL, SALINAS, PR 
+#    USGS 175915066143600 CRIDS 8 WELL, SALINAS, PR 
+#    USGS 175915066175700 VEL 2 WELL, SALINAS, PR 
+#    USGS 175921066144500 LAN 2 WELL, SALINAS, PR 
+#    USGS 175923066142300 PRWRA 5 WELL, SALINAS, PR 
+#    USGS 175928066141900 PRWRA 2 WELL, SALINAS, PR 
+#    USGS 175933066161800 AMA 2 WELL, SALINAS, PR 
+#    USGS 175944066142100 PRWRA 3 WELL, SALINAS, PR 
+#    USGS 175947066130601 PIEZOMETER AGUIRRE HW 5B, SALINAS, PR 
+# -----------------------------------------------------------------------------------
+#
+# The fields in this file include:
+# ---------------------------------
+# agency_cd     Agency code
+# site_no       USGS site number
+# site_tp_cd    Site type code
+# lev_dt        Date level measured
+# lev_tm        Time level measured
+# lev_tz_cd     Time datum
+# lev_va        Water-level value in feet below land surface
+# sl_lev_va     Water-level value in feet above specific vertical datum
+# sl_datum_cd   Referenced vertical datum
+# lev_status_cd Status
+# lev_agency_cd Measuring agency
+# lev_dt_acy_cd Water-level date-time accuracy
+# lev_acy_cd    Water-level accuracy
+# lev_src_cd    Source of measurement
+# lev_meth_cd   Method of measurement
+# lev_age_cd    Water-level approval status
+#
+# Referenced agency codes (lev_agency_cd) included in this output:
+#
+#     USGS       U.S. Geological Survey
+#
+# Referenced site type codes (site_tp_cd) included in this output:
+#
+#     GW         Well
+#     GW-MW      Multiple wells
+#     GW-TH      Test hole
+#
+# Referenced water-level site status codes (lev_status_cd) included in this output:
+#
+#     ""         The reported water-level measurement represents a static level
+#     A          Water level was affected by atmospheric pressure.
+#     S          Nearby site that taps the same aquifer was being pumped.
+#
+# Referenced water-level date-time accuracy codes (lev_dt_acy_cd) included in this output:
+#
+#     D          Date is accurate to the Day
+#     m          Date is accurate to the Minute
+#
+# Referenced water-level accuracy codes (lev_acy_cd) included in this output:
+#
+#     2          Water level accuracy to nearest hundredth of a foot
+#
+# Referenced source of measurement codes (lev_src_cd) included in this output:
+#
+#     S          Measured by personnel of reporting agency.
+#
+# Referenced method of measurement codes (lev_meth_cd) included in this output:
+#
+#     S          Steel-tape measurement.
+#     T          Electric-tape measurement.
+#
+# Referenced water-level approval-status codes (lev_age_cd) included in this output:
+#
+#     A          Approved for publication -- Processing and review completed.
+#     P          Provisional data subject to revision.
+#
+agency_cd	site_no	site_tp_cd	lev_dt	lev_tm	lev_tz_cd	lev_va	sl_lev_va	sl_datum_cd	lev_status_cd	lev_agency_cd	lev_dt_acy_cd	lev_acy_cd	lev_src_cd	lev_meth_cd	lev_age_cd
+USGS	175708066163000	GW	2015-10-07			0.11			A	USGS	D	2	S	S	P
+USGS	175708066163001	GW	2015-10-07			2.81			A	USGS	D	2	S	S	P
+USGS	175709066163200	GW	2015-10-07			0.13			A	USGS	D	2	S	S	P
+USGS	175711066143600	GW-MW	2015-10-15			4.03				USGS	D	2	S	S	P
+USGS	175711066143600	GW-MW	2015-10-15	08:38	AST	4.03				USGS	m	2	S	S	A
+USGS	175711066143601	GW-MW	2015-10-15	08:50	AST	9.92				USGS	m	2	S	S	A
+USGS	175721066151400	GW-MW	2015-10-15			4.54				USGS	D	2	S	S	P
+USGS	175721066151400	GW-MW	2015-10-15	09:11	AST	4.54				USGS	m	2	S	S	A
+USGS	175721066151401	GW-MW	2015-10-15	09:26	AST	14.16				USGS	m	2	S	S	A
+USGS	175747066151500	GW	2015-10-07			19.52				USGS	D	2	S	S	P
+USGS	175748066160400	GW	2015-10-07			24.06				USGS	D	2	S	S	P
+USGS	175804066150700	GW	2015-10-08			38.48			S	USGS	D	2	S	S	P
+USGS	175811066150500	GW	2015-10-07			41.26			A	USGS	D	2	S	S	P
+USGS	175812066134900	GW	2015-10-05			24.37				USGS	D	2	S	S	P
+USGS	175814066155900	GW	2015-10-07			37.93				USGS	D	2	S	S	P
+USGS	175815066153700	GW	2015-10-09			38.11			S	USGS	D	2	S	S	P
+USGS	175815066153701	GW	2015-10-09			38.58			S	USGS	D	2	S	S	P
+USGS	175820066144800	GW	2015-10-09			36.19			S	USGS	D	2	S	S	P
+USGS	175822066141900	GW	2015-10-05			36.09				USGS	D	2	S	S	P
+USGS	175823066162400	GW	2015-10-15			38.71				USGS	D	2	S	S	P
+USGS	175823066164600	GW	2015-10-08			25.48			S	USGS	D	2	S	T	P
+USGS	175824066142300	GW	2015-10-08			40.07				USGS	D	2	S	S	P
+USGS	175825066152500	GW	2015-10-08			42.87				USGS	D	2	S	S	P
+USGS	175827066141000	GW	2015-10-05			34.46				USGS	D	2	S	S	P
+USGS	175827066151600	GW	2015-10-08			37.62			S	USGS	D	2	S	S	P
+USGS	175827066151601	GW	2015-10-08			38.08			S	USGS	D	2	S	S	P
+USGS	175828066151000	GW	2015-10-08			37.91			S	USGS	D	2	S	S	P
+USGS	175830066152500	GW	2015-10-08			40.69			S	USGS	D	2	S	S	P
+USGS	175833066145800	GW-TH	2015-10-09			69.64			S	USGS	D	2	S	T	P
+USGS	175833066145800	GW-TH	2015-10-15	12:34	AST	69.69				USGS	m	2	S	S	A
+USGS	175833066145800	GW-TH	2015-10-26	12:07	AST	69.79				USGS	m	2	S	S	A
+USGS	175842066144600	GW	2015-10-09			54.18			S	USGS	D	2	S	S	P
+USGS	175845066164500	GW	2015-10-09			43.02			S	USGS	D	2	S	S	P
+USGS	175848066170700	GW	2015-10-09			38.10			S	USGS	D	2	S	S	P
+USGS	175850066154000	GW-MW	2015-10-08			44.32				USGS	D	2	S	S	P
+USGS	175851066155100	GW	2015-10-08			41.33				USGS	D	2	S	S	P
+USGS	175854066144500	GW	2015-10-07			59.56			S	USGS	D	2	S	S	P
+USGS	175854066144501	GW	2015-10-07			60.02			S	USGS	D	2	S	S	P
+USGS	175855066161400	GW	2015-10-08			41.66			S	USGS	D	2	S	S	P
+USGS	175856066144200	GW	2015-10-07			57.60			S	USGS	D	2	S	S	P
+USGS	175908066180500	GW	2015-10-09			26.61			S	USGS	D	2	S	S	P
+USGS	175910066155500	GW-TH	2015-10-09			53.16			S	USGS	D	2	S	S	P
+USGS	175910066155500	GW-TH	2015-10-15	12:59	AST	53.39				USGS	m	2	S	S	A
+USGS	175910066155501	GW	2015-10-08			58.99			S	USGS	D	2	S	S	P
+USGS	175915066143600	GW	2015-10-07			64.20			S	USGS	D	2	S	S	P
+USGS	175915066175700	GW	2015-10-09			30.16			S	USGS	D	2	S	S	P
+USGS	175921066144500	GW	2015-10-07			72.07			S	USGS	D	2	S	S	P
+USGS	175923066142300	GW	2015-10-09			55.87			S	USGS	D	2	S	S	P
+USGS	175928066141900	GW	2015-10-09			57.88			S	USGS	D	2	S	S	P
+USGS	175933066161800	GW	2015-10-09			66.77			S	USGS	D	2	S	S	P
+USGS	175944066142100	GW	2015-10-09			45.97			S	USGS	D	2	S	S	P
+USGS	175947066130601	GW	2015-10-26	11:20	AST	30.59				USGS	m	2	S	S	A
